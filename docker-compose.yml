@@ -1,0 +1,11 @@
+version: '2'
+services:
+
+  db:
+    image: postgres:latest
+    environment:
+        POSTGRES_USER: dive-admin
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: dive-db
+    ports:
+      - 4432:5432

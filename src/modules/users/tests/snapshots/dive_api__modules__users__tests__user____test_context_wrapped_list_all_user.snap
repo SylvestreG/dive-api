@@ -1,0 +1,50 @@
+---
+source: src/modules/users/tests/user.rs
+expression: users
+---
+[
+  {
+    "id": "[uuid]",
+    "firstname": "alex",
+    "lastname": "chauvet",
+    "mail": "alex@epitech.net",
+    "tel": "0663903521",
+    "blocked_at": null,
+    "blocked_by": null,
+    "created_at": "[date]",
+    "updated_at": "[date]"
+  },
+  {
+    "id": "[uuid]",
+    "firstname": "willy",
+    "lastname": "marteau",
+    "mail": "willy@epitech.net",
+    "tel": "0663903521",
+    "blocked_at": null,
+    "blocked_by": null,
+    "created_at": "[date]",
+    "updated_at": "[date]"
+  },
+  {
+    "id": "[uuid]",
+    "firstname": "sylvestre",
+    "lastname": "gallon",
+    "mail": "gallon_s@epitech.net",
+    "tel": "0663903521",
+    "blocked_at": null,
+    "blocked_by": null,
+    "created_at": "[date]",
+    "updated_at": "[date]"
+  },
+  {
+    "id": "[uuid]",
+    "firstname": "aurel",
+    "lastname": "bussierre",
+    "mail": "aurel@epitech.net",
+    "tel": "0663903521",
+    "blocked_at": null,
+    "blocked_by": null,
+    "created_at": "[date]",
+    "updated_at": "[date]"
+  }
+]
