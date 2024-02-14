@@ -1,0 +1,42 @@
+---
+source: src/modules/users/tests/level.rs
+expression: levels
+---
+[
+  {
+    "id": "5232de05-4495-4fec-a45f-18bbef3f8ec3",
+    "level_name": "Niveau 3",
+    "created_at": "[date]",
+    "updated_at": "[date]"
+  },
+  {
+    "id": "888607ea-887f-415a-89cd-20df3153e009",
+    "level_name": "Niveau 4",
+    "created_at": "[date]",
+    "updated_at": "[date]"
+  },
+  {
+    "id": "888607ea-887f-416a-89cd-20df3153e009",
+    "level_name": "Moniteur Fédéral 1",
+    "created_at": "[date]",
+    "updated_at": "[date]"
+  },
+  {
+    "id": "888607ea-887f-417a-89cd-20df3153e009",
+    "level_name": "Moniteur Fédéral 2",
+    "created_at": "[date]",
+    "updated_at": "[date]"
+  },
+  {
+    "id": "f339cf72-47c5-48f8-9ad1-ff1d93f6c2e6",
+    "level_name": "Niveau 1",
+    "created_at": "[date]",
+    "updated_at": "[date]"
+  },
+  {
+    "id": "f633eb82-ff98-4e93-9264-a27c1bb54c87",
+    "level_name": "Niveau 2",
+    "created_at": "[date]",
+    "updated_at": "[date]"
+  }
+]

@@ -1,7 +1,6 @@
 use crate::error::DiveErr;
 
 pub trait Trait {
-
     /// # Errors
     ///
     /// Will return `DiveErr` if the sql does not work

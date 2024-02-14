@@ -1,30 +1,22 @@
-use crate::schema::user;
+use crate::schema::level;
 use diesel::internal::derives::multiconnection::chrono;
 use diesel::{Insertable, Queryable, Selectable};
 use serde::Serialize;
 use uuid::Uuid;
 
 #[derive(Insertable)]
-#[diesel(table_name = user)]
+#[diesel(table_name = level)]
 pub struct New<'a> {
     pub id: Option<Uuid>,
-    pub firstname: &'a str,
-    pub lastname: &'a str,
-    pub mail: &'a str,
-    pub tel: &'a str,
+    pub level_name: &'a str,
 }
 
 #[derive(Queryable, Selectable, Serialize, Ord, Eq, PartialEq, PartialOrd)]
-#[diesel(table_name = crate::schema::user)]
+#[diesel(table_name = crate::schema::level)]
 #[diesel(check_for_backend(diesel::pg::Pg))]
 pub struct Entity {
     pub id: Uuid,
-    pub firstname: String,
-    pub lastname: String,
-    pub mail: String,
-    pub tel: String,
-    pub blocked_at: Option<chrono::NaiveDateTime>,
-    pub blocked_by: Option<Uuid>,
+    pub level_name: String,
     pub created_at: chrono::NaiveDateTime,
     pub updated_at: chrono::NaiveDateTime,
 }

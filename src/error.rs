@@ -9,5 +9,5 @@ pub enum DiveErr {
     #[error("dotenv Error")]
     DotenvError(#[from] dotenvy::Error),
     #[error("uuid Erro")]
-    UuidError(#[from] uuid::Error)
+    UuidError(#[from] uuid::Error),
 }

@@ -17,16 +17,6 @@ diesel::table! {
 }
 
 diesel::table! {
-    admin (id) {
-        id -> Uuid,
-        user_id -> Uuid,
-        granted_by -> Nullable<Uuid>,
-        created_at -> Timestamp,
-        updated_at -> Timestamp,
-    }
-}
-
-diesel::table! {
     level (id) {
         id -> Uuid,
         level_name -> Varchar,
@@ -97,7 +87,6 @@ diesel::table! {
     }
 }
 
-diesel::joinable!(admin -> user (user_id));
 diesel::joinable!(level_ability -> ability (ability_id));
 diesel::joinable!(level_ability -> level (level_id));
 diesel::joinable!(user_level -> level (level_id));
@@ -107,7 +96,6 @@ diesel::joinable!(user_level_ability -> user (user_id));
 
 diesel::allow_tables_to_appear_in_same_query!(
     ability,
-    admin,
     level,
     level_ability,
     level_dep_link,

@@ -1,0 +1,10 @@
+---
+source: src/modules/users/tests/level.rs
+expression: lvl_1
+---
+{
+  "id": "f633eb82-ff98-4e93-9264-a27c1bb54c87",
+  "level_name": "Niveau 2",
+  "created_at": "[date]",
+  "updated_at": "[date]"
+}

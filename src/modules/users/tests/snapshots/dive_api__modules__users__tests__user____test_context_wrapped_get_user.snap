@@ -1,0 +1,15 @@
+---
+source: src/modules/users/tests/user.rs
+expression: user_1
+---
+{
+  "id": "f633eb82-ff98-4e93-9264-a27c1bb54c87",
+  "firstname": "titi",
+  "lastname": "tata",
+  "mail": "tata@ponay.fr",
+  "tel": "0343239320",
+  "blocked_at": null,
+  "blocked_by": null,
+  "created_at": "[date]",
+  "updated_at": "[date]"
+}

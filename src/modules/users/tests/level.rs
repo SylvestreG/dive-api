@@ -7,20 +7,20 @@ use dotenvy::dotenv;
 use r2d2::Pool;
 use test_context::{test_context, TestContext};
 
-struct UserTests {
-    svc: services::user::Service,
+struct LevelTests {
+    svc: services::level::Service,
 }
 
-impl TestContext for UserTests {
-    fn setup() -> UserTests {
+impl TestContext for LevelTests {
+    fn setup() -> LevelTests {
         dotenv().unwrap();
 
         let db_url = std::env::var("DATABASE_URL").unwrap();
         let manager = ConnectionManager::<PgConnection>::new(db_url);
         let pool = Pool::builder().build(manager).unwrap();
 
-        UserTests {
-            svc: services::user::Service::new(pool),
+        LevelTests {
+            svc: services::level::Service::new(pool),
         }
     }
 
@@ -29,34 +29,34 @@ impl TestContext for UserTests {
     }
 }
 
-#[test_context(UserTests)]
+#[test_context(LevelTests)]
 #[test]
-fn list_all_user(ctx: &mut UserTests) -> Result<(), DiveErr> {
-    let mut users = ctx.svc.list_all_user()?;
+fn list_all_level(ctx: &mut LevelTests) -> Result<(), DiveErr> {
+    let mut levels = ctx.svc.list_all_levels()?;
 
-    users.sort();
-    insta::assert_json_snapshot!(users, {
+    levels.sort();
+    insta::assert_json_snapshot!(levels, {
         "[].created_at" => "[date]",
         "[].updated_at" => "[date]",
     });
     Ok(())
 }
 
-#[test_context(UserTests)]
+#[test_context(LevelTests)]
 #[test]
-fn get_user(ctx: &mut UserTests) -> Result<(), DiveErr> {
-    let user_1 = ctx
+fn get_level(ctx: &mut LevelTests) -> Result<(), DiveErr> {
+    let lvl_1 = ctx
         .svc
         .find_by_uuid(users::fixtures::user::DATA[1].id.unwrap())?;
-    let user_2 = ctx
+    let lvl_2 = ctx
         .svc
         .find_by_uuid(users::fixtures::user::DATA[1].id.unwrap())?;
 
-    insta::assert_json_snapshot!(user_1, {
+    insta::assert_json_snapshot!(lvl_1, {
         ".created_at" => "[date]",
         ".updated_at" => "[date]",
     });
-    insta::assert_json_snapshot!(user_2, {
+    insta::assert_json_snapshot!(lvl_2, {
         ".created_at" => "[date]",
         ".updated_at" => "[date]",
     });
